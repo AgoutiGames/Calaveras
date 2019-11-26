@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.4" orientation="orthogonal" renderorder="right-down" width="15" height="12" tilewidth="64" tileheight="64" infinite="0" nextobjectid="13">
+ <properties>
+  <property name="type" value="Menu"/>
+ </properties>
+ <tileset firstgid="1" source="../tilesets/tiles/sky.tsx"/>
+ <tileset firstgid="13" source="../tilesets/tiles/platform.tsx"/>
+ <tileset firstgid="19" source="../tilesets/tiles/cloud.tsx"/>
+ <tileset firstgid="20" source="../tilesets/saw/saw.tsx"/>
+ <tileset firstgid="24" source="../characters/frog/frog.tsx"/>
+ <tileset firstgid="72" source="../gui/menu/buttons.tsx"/>
+ <layer name="Background" width="15" height="12">
+  <data encoding="base64" compression="zlib">
+   eJylw4cNACAMAKC65//3+oOQkCIifc6wwAob7HDACRfc8MALH4LEBJM=
+  </data>
+ </layer>
+ <objectgroup name="Moving Clouds">
+  <object id="5" name="Cloud1" gid="19" x="-69" y="221" width="256" height="256"/>
+  <object id="6" name="Cloud5" gid="19" x="762" y="373" width="256" height="256">
+   <properties>
+    <property name="speed" type="float" value="0.9"/>
+   </properties>
+  </object>
+  <object id="7" name="Cloud4" gid="19" x="560" y="245" width="203" height="219">
+   <properties>
+    <property name="speed" type="float" value="0.8"/>
+   </properties>
+  </object>
+  <object id="8" name="Cloud2" gid="19" x="75" y="332" width="198" height="179">
+   <properties>
+    <property name="speed" type="float" value="0.6"/>
+   </properties>
+  </object>
+  <object id="9" name="Cloud3" gid="19" x="360" y="181" width="142" height="132">
+   <properties>
+    <property name="speed" type="float" value="0.3"/>
+   </properties>
+  </object>
+  <object id="10" name="Cloud6" gid="19" x="907" y="180" width="142" height="132">
+   <properties>
+    <property name="speed" type="float" value="0.3"/>
+   </properties>
+  </object>
+  <object id="11" name="Cloud7" gid="19" x="259" y="280.5" width="198" height="179">
+   <properties>
+    <property name="speed" type="float" value="0.6"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer name="Frog" width="15" height="12" offsetx="0" offsety="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFIxWoDLQDaAAAIKAAJQ==
+  </data>
+ </layer>
+ <objectgroup name="Buttons">
+  <object id="1" name="quit" gid="72" x="418.667" y="490.667" width="128" height="128">
+   <properties>
+    <property name="id" value="Quit"/>
+    <property name="sound" type="file" value="../sound/Start.wav"/>
+    <property name="type" value="Button"/>
+   </properties>
+  </object>
+  <object id="2" name="start" gid="74" x="421.333" y="370.667" width="128" height="128">
+   <properties>
+    <property name="id" value="Start"/>
+    <property name="sound" type="file" value="../sound/Start.wav"/>
+    <property name="type" value="Button"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer name="Blocks" width="15" height="12">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFuIAImXKDAdDCfbxAzIcF8xOhVwCIBbFgISrrBQDLrAGN
+  </data>
+ </layer>
+ <imagelayer name="Title" offsetx="351" offsety="130">
+  <image source="../gui/menu/title.png" width="256" height="128"/>
+ </imagelayer>
+</map>

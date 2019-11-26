@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.4" orientation="orthogonal" renderorder="right-down" width="120" height="12" tilewidth="64" tileheight="64" infinite="0" nextobjectid="35">
+ <properties>
+  <property name="type" value="JumpStage"/>
+ </properties>
+ <tileset firstgid="1" source="../tilesets/tiles/sky.tsx"/>
+ <tileset firstgid="13" source="../characters/frog/frog.tsx"/>
+ <tileset firstgid="61" source="../gui/menu/buttons.tsx"/>
+ <tileset firstgid="65" source="../tilesets/tiles/platform.tsx"/>
+ <tileset firstgid="71" source="../tilesets/tiles/cloud.tsx"/>
+ <tileset firstgid="72" source="../gizmos/arrow/arrow.tsx"/>
+ <tileset firstgid="84" source="../tilesets/saw/saw.tsx"/>
+ <layer name="Background" width="120" height="12">
+  <data encoding="base64" compression="zlib">
+   eJztw4cJADAMwLCke/1/b/8wFigjIo1djF6N3ozejT6MPo2+jL6Nfox+jf6M/gEVYiSR
+  </data>
+ </layer>
+ <layer name="FallBellowDeathZone" width="120" height="12" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJztwwEJAAAMA6C1XP8mi3E4CiYAAAAAADfq6wOlyijJ
+  </data>
+ </layer>
+ <objectgroup name="Far Clouds">
+  <object id="1" name="FarCloud" gid="71" x="-39.9091" y="112" width="100" height="100">
+   <properties>
+    <property name="speed" type="float" value="0.3"/>
+   </properties>
+  </object>
+  <object id="2" name="FarCloud" gid="71" x="811.121" y="106.848" width="100" height="100">
+   <properties>
+    <property name="speed" type="float" value="0.3"/>
+   </properties>
+  </object>
+  <object id="3" name="FarCloud" gid="71" x="1643.12" y="171.818" width="100" height="100">
+   <properties>
+    <property name="speed" type="float" value="0.3"/>
+   </properties>
+  </object>
+  <object id="4" name="FarCloud" gid="71" x="241" y="235" width="100" height="100">
+   <properties>
+    <property name="speed" type="float" value="0.3"/>
+   </properties>
+  </object>
+  <object id="5" name="FarCloud" gid="71" x="2271.21" y="210.606" width="100" height="100">
+   <properties>
+    <property name="speed" type="float" value="0.3"/>
+   </properties>
+  </object>
+  <object id="6" name="FarCloud" gid="71" x="2828.79" y="53.0303" width="100" height="100">
+   <properties>
+    <property name="speed" type="float" value="0.3"/>
+   </properties>
+  </object>
+  <object id="7" name="FarCloud" gid="71" x="3450" y="34.8485" width="100" height="100">
+   <properties>
+    <property name="speed" type="float" value="0.3"/>
+   </properties>
+  </object>
+  <object id="8" name="FarCloud" gid="71" x="3280.3" y="283.333" width="100" height="100">
+   <properties>
+    <property name="speed" type="float" value="0.3"/>
+   </properties>
+  </object>
+  <object id="9" name="FarCloud" gid="71" x="4186.36" y="101.515" width="100" height="100">
+   <properties>
+    <property name="speed" type="float" value="0.3"/>
+   </properties>
+  </object>
+  <object id="10" name="FarCloud" gid="71" x="5416.67" y="146.97" width="100" height="100">
+   <properties>
+    <property name="speed" type="float" value="0.3"/>
+   </properties>
+  </object>
+  <object id="11" name="FarCloud" gid="71" x="6553.03" y="83.3333" width="100" height="100">
+   <properties>
+    <property name="speed" type="float" value="0.3"/>
+   </properties>
+  </object>
+  <object id="12" name="FarCloud" gid="71" x="6919.33" y="185.879" width="100" height="100">
+   <properties>
+    <property name="speed" type="float" value="0.3"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="Clouds">
+  <object id="13" name="NormalCloud" gid="71" x="92" y="190" width="170" height="170">
+   <properties>
+    <property name="speed" type="float" value="0.6"/>
+   </properties>
+  </object>
+  <object id="14" name="NormalCloud" gid="71" x="497" y="263" width="170" height="170">
+   <properties>
+    <property name="speed" type="float" value="0.6"/>
+   </properties>
+  </object>
+  <object id="15" name="NormalCloud" gid="71" x="1067" y="91" width="170" height="170">
+   <properties>
+    <property name="speed" type="float" value="0.6"/>
+   </properties>
+  </object>
+  <object id="16" name="NormalCloud" gid="71" x="2085" y="271" width="170" height="170">
+   <properties>
+    <property name="speed" type="float" value="0.6"/>
+   </properties>
+  </object>
+  <object id="17" name="NormalCloud" gid="71" x="2993" y="121" width="170" height="170">
+   <properties>
+    <property name="speed" type="float" value="0.6"/>
+   </properties>
+  </object>
+  <object id="18" name="NormalCloud" gid="71" x="3293" y="231" width="170" height="170">
+   <properties>
+    <property name="speed" type="float" value="0.6"/>
+   </properties>
+  </object>
+  <object id="19" name="NormalCloud" gid="71" x="3991" y="285" width="170" height="170">
+   <properties>
+    <property name="speed" type="float" value="0.6"/>
+   </properties>
+  </object>
+  <object id="20" name="NormalCloud" gid="71" x="4581" y="107" width="170" height="170">
+   <properties>
+    <property name="speed" type="float" value="0.6"/>
+   </properties>
+  </object>
+  <object id="23" name="NormalCloud" gid="71" x="5631" y="171" width="170" height="170">
+   <properties>
+    <property name="speed" type="float" value="0.6"/>
+   </properties>
+  </object>
+  <object id="24" name="NormalCloud" gid="71" x="6427" y="273" width="170" height="170">
+   <properties>
+    <property name="speed" type="float" value="0.6"/>
+   </properties>
+  </object>
+  <object id="25" name="NormalCloud" gid="71" x="7261" y="141" width="170" height="170">
+   <properties>
+    <property name="speed" type="float" value="0.6"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="Near Clouds">
+  <object id="26" name="NearCloud" gid="71" x="-164" y="212" width="256" height="256"/>
+  <object id="27" name="NearCloud" gid="71" x="378" y="282" width="256" height="256"/>
+  <object id="28" name="NearCloud" gid="71" x="1330" y="158" width="256" height="256"/>
+  <object id="29" name="NearCloud" gid="71" x="2228" y="252" width="256" height="256"/>
+  <object id="30" name="NearCloud" gid="71" x="3554" y="120" width="256" height="256"/>
+  <object id="31" name="NearCloud" gid="71" x="5678" y="240" width="256" height="256"/>
+  <object id="32" name="NearCloud" gid="71" x="6796" y="286" width="256" height="256"/>
+ </objectgroup>
+ <objectgroup name="Characters">
+  <object id="33" name="Player" gid="30" x="251" y="106" width="64" height="64"/>
+ </objectgroup>
+ <layer name="Platforms" width="120" height="12">
+  <data encoding="base64" compression="zlib">
+   eJztlN0OgCAIhXu1snr/R0ov2Bzjp0yRFmfjSlQOH7osoVAoFAp9W2uOjYk0sa5RKn4tfUF/re+E+/YcBxOnYU1WKn4tfUF/R91JzU/t0Rtf6T+BoPKTcAbnXcttqRvvH82XOr+Vb69e3KlXCiof++N8YL5SbkvdeL/G9+3/3ZNvr14U1bOC35cXvtxfQrFo5fv0feN58Mq3Pkvq90y+XC2Ubyu+OH8WX232g6++Tv1xXvhqvQm++jrVoz/wvQBpm3Y4
+  </data>
+ </layer>
+ <layer name="Saws" width="120" height="12">
+  <data encoding="base64" compression="zlib">
+   eJzt0jENAAAIwDBE4l8LDggfJLQKdiwCgM9yO4Czujd8AwAAwEQB4eIA/Q==
+  </data>
+ </layer>
+ <objectgroup name="Arrow">
+  <object id="34" name="Arrow" gid="83" x="0" y="0" width="256" height="256">
+   <properties>
+    <property name="base_force" type="float" value="1100"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

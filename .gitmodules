@@ -1,0 +1,3 @@
+[submodule "salmon"]
+	path = salmon
+	url = https://github.com/AgoutiGames/RawSalmonEngine/
