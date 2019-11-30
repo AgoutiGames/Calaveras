@@ -78,9 +78,11 @@ class GameScene : public salmon::MapRef {
 
         void remove_character(GameCharacter* game_character);
 
-        SceneManager& get_scene_manager() {return *m_scene_manager;}
+        // Instead of exposing scene manager we forward the only functions safe to call from inside update
         salmon::InputCacheRef get_input_cache();
         salmon::AudioManagerRef get_audio_manager();
+        void shutdown_game();
+        void next_scene(std::string map_filename);
 
     protected:
         SceneManager* m_scene_manager;

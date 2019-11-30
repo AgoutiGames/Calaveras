@@ -136,11 +136,19 @@ GameScene* GameScene::parse_scene(salmon::MapRef map, SceneManager* scene_manage
 }
 
 salmon::InputCacheRef GameScene::get_input_cache() {
-    return m_scene_manager->get_game().get_input_cache();
+    return m_scene_manager->get_input_cache();
 }
 
 salmon::AudioManagerRef GameScene::get_audio_manager() {
-    return m_scene_manager->get_game().get_audio_manager();
+    return m_scene_manager->get_audio_manager();
+}
+
+void GameScene::shutdown_game() {
+    m_scene_manager->shutdown();
+}
+
+void GameScene::next_scene(std::string map_filename) {
+    m_scene_manager->next_scene(map_filename);
 }
 
 std::map<std::string, GameScene*>& GameScene::get_dict() {

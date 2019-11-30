@@ -2,11 +2,13 @@
 
 #include <iostream>
 
-SceneManager::SceneManager(int x_res, int y_res,bool fullscreen) : m_game(x_res, y_res, fullscreen) {}
+SceneManager::SceneManager(std::string map_filename) {
+    load_scene(map_filename);
+}
 
 bool SceneManager::load_scene(std::string map_filename) {
-    if(m_game.load_map(map_filename)) {
-        GameScene* scene = GameScene::parse_scene(m_game.get_map(), this);
+    if(load_map(map_filename)) {
+        GameScene* scene = GameScene::parse_scene(get_map(), this);
         if(scene == nullptr) {
             std::cerr << "Failed to parse scene: " << map_filename << "!\n";
             return false;
@@ -21,7 +23,7 @@ bool SceneManager::load_scene(std::string map_filename) {
     }
 }
 void SceneManager::close_scene() {
-    m_game.close_map();
+    close_map();
     m_scenes.pop();
 }
 
@@ -32,9 +34,9 @@ bool SceneManager::run() {
         if(!load_scene(m_next_scene)) {return false;}
         m_next_scene = std::string("");
     }
-    if(!m_scenes.empty() && m_game.update()) {
+    if(!m_scenes.empty() && update()) {
         m_scenes.top()->update();
-        m_game.render();
+        render();
         return true;
     }
     else {return false;}

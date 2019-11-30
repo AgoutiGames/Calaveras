@@ -14,8 +14,8 @@ void Frog::init() {
     put(m_gravity, "gravity");
     put(m_jump_sound, "jump_sound");
     put(m_death_sound, "death_sound");
-    m_jump = m_scene->get_audio_manager().get_sound(m_jump_sound);
-    m_death = m_scene->get_audio_manager().get_sound(m_death_sound);
+    m_jump = m_scene->get_audio_manager().get_sound(m_jump_sound,true);
+    m_death = m_scene->get_audio_manager().get_sound(m_death_sound,true);
 
     m_scene->get_camera().bind_actor(*this);
     m_arrow = m_scene->get_character<Arrow>();
@@ -27,7 +27,7 @@ void Frog::update() {
     if(m_dead) {
         if(m_death.playing()) {return;}
         else {
-            m_scene->get_scene_manager().next_scene("menu.tmx");
+            m_scene->next_scene("menu.tmx");
             return;
         }
     }

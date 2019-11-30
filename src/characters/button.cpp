@@ -24,7 +24,7 @@ void Button::update() {
             salmon::InputCacheRef input = m_scene->get_input_cache();
             salmon::MouseState mouse = input.get_mouse_state();
             if(mouse.left.pressed) {
-                m_scene->get_audio_manager().get_sound(m_sound).play();
+                m_scene->get_audio_manager().get_sound(m_sound,true).play();
                 static_cast<Menu*>(m_scene)->button_pressed(m_id);
             }
         }
