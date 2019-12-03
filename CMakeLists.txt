@@ -90,4 +90,4 @@ target_link_libraries(${PROJECT_NAME} PUBLIC Salmon)
 set(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR})
 install(TARGETS ${PROJECT_NAME} DESTINATION bin)
 # Works only with CMake version 3.13+
-install(TARGETS Salmon DESTINATION libs)
+#install(TARGETS Salmon DESTINATION libs)

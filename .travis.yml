@@ -1,0 +1,33 @@
+dist: bionic
+sudo: required
+language: cpp
+compiler: gcc
+env:
+- CONFIG=Release PLATFORM=linux   BIT=64
+- CONFIG=Release PLATFORM=linux   BIT=32
+- CONFIG=Release PLATFORM=windows BIT=64
+- CONFIG=Release PLATFORM=windows BIT=32
+- CONFIG=Debug PLATFORM=linux   BIT=64
+- CONFIG=Debug PLATFORM=linux   BIT=32
+- CONFIG=Debug PLATFORM=windows BIT=64
+- CONFIG=Debug PLATFORM=windows BIT=32
+install:
+- sudo apt-get update
+- sudo ./scripts/fetch_dev_dependencies.sh
+script:
+- "./scripts/compile.sh"
+before_deploy:
+- "./scripts/pack_artifacts.sh"
+deploy:
+  provider: releases
+  skip_cleanup: true
+  file_glob: true
+  prerelease: true
+  api_key:
+    secure: of3cEp0rtUgSqlbneK7OM3i5yRRPSNwrNJvx1j+Nz2Uf/4/TDc0gkyh1XCoIzzSZKGTWd2O72KOwo4y1L6TtU+SW6H9kEjrf2xmdmZYL0RolHJ+8fJU6SgAhPokU3h1hmZq9Z0EyRW8om00DIBeHON2Amt8+YKqn3+4yWKFbOlW/V32F1rQVVuVdi03+gwYomxPvuC9Xnbo1Lk8neaPnTa9DJwr4LoicOJa5eyMmWBqgk+A7hRx3SbuOhdP7lezeivN3+cRfayhOaeC/3Mq/E1uFRbnE1IPrsjucdbyhwdBORPUbA4FbnO6+5KaskWtiy5cFaH/BWZAeGyciyPEg5d+Kewnysgg78yp9zajKQIVfgAFYI0Jx7ZByWNR1slqsizeS5Aduoq+Dt+Jz1knn6o2jPve9VS7dRWA4XwsA0Gujr4pty/WtzB4dKiPtW0GZwvL3nPBuCGe8kzAb2pGR0MDDhYvQF3MlgONYTfe8dLZ+pRyz7uZs79A+rdxvcaRZ4e9KBfeSkGoHdyKtnYRdNUYbK8A/owgpyugwIUVuWGX5Qh69mmHpLa/Jg1horneFPnzWgz0Xte0EUKBDrUtB9MI5KWDPiHVXK2TuxJ4JHNuLDFH9IQGCMNJkElBgzg1cZ+WUc5WjodKnVpsce87KKN2tHAt41kUi3uzXH+c0jBM=
+  file: Calaveras*
+  on:
+    tags: true
+    condition: $CONFIG = Release
+    branch: master
+    repo: AgoutiGames/Calaveras
