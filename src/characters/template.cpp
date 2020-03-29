@@ -8,6 +8,8 @@ Template::Template(salmon::ActorRef actor, GameScene* scene) : GameCharacter(act
 void Template::init() {
     // Setup member vars here | example: put(m_speed, "m_speed");
     
+    // Clear data accessed via put
+    get_data().clear();
 }
 
 void Template::update() {

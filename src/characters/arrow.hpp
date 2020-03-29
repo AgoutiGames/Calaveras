@@ -12,9 +12,11 @@ class Arrow : public GameCharacter {
 
         void init() override;
         void update() override;
+        std::string get_type() const override {return type;}
 
         bool ready() {return m_ready;}
         void apply_force(float& x, float& y);
+        bool move(float x, float y) {return move_absolute(x,y,salmon::Collidees::tile,{salmon::DEFAULT_HITBOX},{salmon::DEFAULT_HITBOX},false);}
 
         static const char* type;
     protected:

@@ -2,7 +2,7 @@
 set -e
 usage="Usage: ./compile.sh [CONFIG] [PLATFORM] [BIT]
 CONFIG: \"Release\", \"Debug\", \"Profile\"
-PLATFORM: \"linux\", \"windows\"
+PLATFORM: \"linux\", \"windows\" \"web\"
 BIT: \"64\", \"32\""
 if [ "$1" ==  "--help" ] || [ "$1" == "-h" ]
 then
@@ -37,7 +37,7 @@ then
     echo "Please check help page via \"./compile -h\""
     exit 1
 fi
-if [ "$P" != "linux" ] && [ "$P" != "windows" ]
+if [ "$P" != "linux" ] && [ "$P" != "windows" ] && [ "$P" != "web" ]
 then
     echo "PLATFORM parameter or env var is not properly set! Value is: \"${P}\"!"
     echo "Please check help page via \"./compile -h\""
@@ -54,7 +54,14 @@ cd "$(dirname "${BASH_SOURCE[0]}")"
 cd ../
 mkdir build
 cd build
-cmake -DCMAKE_BUILD_TYPE=${C} -DCMAKE_TOOLCHAIN_FILE="../salmon/cmake/${P}${B}-toolchain.cmake" ..
-make -j4
-make install
+if [ "$P" == "web" ]
+then
+    source ../emsdk/emsdk_env.sh
+    emcmake cmake -DCMAKE_BUILD_TYPE=${C} ..
+    emmake make -j$(nproc)
+else
+    cmake -DCMAKE_BUILD_TYPE=${C} -DCMAKE_TOOLCHAIN_FILE="../salmon/cmake/${P}${B}-toolchain.cmake" ..
+    make -j$(nproc)
+    make install
+fi
 echo "Successfully compiled"

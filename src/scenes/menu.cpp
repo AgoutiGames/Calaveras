@@ -12,11 +12,15 @@ Menu::Menu(salmon::MapRef map, SceneManager* scene_manager) :
 
 void Menu::init() {
     m_scene_manager->set_game_resolution(920,768);
+    m_scene_manager->set_fullscreen(false);
     m_scene_manager->set_window_size(920,768);
+
     // Initializes all characters in scene
     GameScene::init();
     // Setup member vars here | example: put(m_speed, "m_speed");
 
+    // Clear data accessed via put
+    get_data().clear();
 }
 
 void Menu::update() {
@@ -35,6 +39,7 @@ void Menu::button_pressed(std::string id) {
         m_scene_manager->shutdown();
     }
     else if(id == "Start") {
+        // Load next scene file
         m_scene_manager->next_scene("stage1.tmx");
     }
     else {

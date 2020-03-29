@@ -23,6 +23,10 @@ bool SceneManager::load_scene(std::string map_filename) {
     }
 }
 void SceneManager::close_scene() {
+    // First clear scene of its characters so that destructors who want to erase
+    // their child characters don't freak out because the scene is destructing
+    m_scenes.top()->m_characters.clear();
+
     close_map();
     m_scenes.pop();
 }

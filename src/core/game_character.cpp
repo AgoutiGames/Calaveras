@@ -4,7 +4,7 @@
 
 #include "core/game_scene.hpp"
 
-#include "characters/player.hpp"
+const char* GameCharacter::type_string = "type";
 
 GameCharacter::GameCharacter(salmon::ActorRef actor, GameScene* scene) : salmon::ActorRef(actor), m_scene{scene} {}
 
@@ -34,7 +34,7 @@ bool GameCharacter::put(std::string& var, std::string name) {
 }
 
 GameCharacter* GameCharacter::parse_character(salmon::ActorRef actor, GameScene* scene) {
-    std::string type = actor.get_data().get_val_string("type");
+    std::string type = actor.get_data().get_val_string(type_string);
     if(get_dict().find(type) == get_dict().end()) {
         std::cerr << "Unknown Game Character type: \"" << type << "\" supplied!\n";
         return nullptr;

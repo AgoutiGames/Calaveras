@@ -15,6 +15,10 @@ class Frog : public GameCharacter {
 
         void init() override;
         void update() override;
+        std::string get_type() const override {return type;}
+
+        bool move(float x, float y) {return move_relative(x,y,salmon::Collidees::tile,{salmon::DEFAULT_HITBOX},{salmon::DEFAULT_HITBOX},false);}
+        bool on_ground(salmon::Direction dir = salmon::Direction::down) {return GameCharacter::on_ground(salmon::Collidees::tile,salmon::DEFAULT_HITBOX,{salmon::DEFAULT_HITBOX},dir);}
 
         static const char* type;
     protected:

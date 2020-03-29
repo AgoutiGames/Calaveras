@@ -12,6 +12,7 @@ class Template : public GameCharacter {
 
         void init() override;
         void update() override;
+        std::string get_type() const override {return type;}
 
         static const char* type;
     protected:

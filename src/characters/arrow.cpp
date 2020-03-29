@@ -53,7 +53,7 @@ void Arrow::update() {
             float x_middle = (mouse.x_pos + m_x_base) * 0.5;
             float y_middle = (mouse.y_pos + m_y_base) * 0.5;
             salmon::CameraRef cam = m_scene->get_camera();
-            move(cam.get_x() + x_middle - get_w() * 0.5, cam.get_y() + y_middle + get_h() * 0.5, true);
+            move(cam.get_x() + x_middle - get_w() * 0.5, cam.get_y() + y_middle + get_h() * 0.5);
         }
         else {
             set_hidden(true);

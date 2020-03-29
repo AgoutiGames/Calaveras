@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
-usage="Usage: ./build.sh [CONFIG] [PLATFORM] [BIT] [LIBRARY] [VERSION]
+usage="Usage: ./build.sh [CONFIG] [PLATFORM] [BIT] [VERSION]
 CONFIG: \"Release\", \"Debug\", \"Profile\"
-PLATFORM: \"linux\", \"windows\"
+PLATFORM: \"linux\", \"windows\" \"web\"
 BIT: \"64\", \"32\"
 VERSION: any string"
 
@@ -34,7 +34,7 @@ then
     echo "Please check help page via \"./build -h\""
     exit
 fi
-if [ "$PLATFORM" != "linux" ] && [ "$PLATFORM" != "windows" ]
+if [ "$PLATFORM" != "linux" ] && [ "$PLATFORM" != "windows" ] && [ "$PLATFORM" != "web" ]
 then
     echo "PLATFORM parameter or env var is not properly set! Value is: \"${PLATFORM}\"!"
     echo "Please check help page via \"./build -h\""

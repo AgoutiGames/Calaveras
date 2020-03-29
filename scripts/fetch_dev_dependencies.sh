@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 usage="Usage: ./fetch_dependencies.sh [PLATFORM] [BIT]
-PLATFORM: \"linux\", \"windows\"
+PLATFORM: \"linux\", \"windows\" \"web\"
 BIT: \"64\", \"32\""
 if [ "$1" ==  "--help" ] || [ "$1" == "-h" ]
 then
@@ -22,7 +22,7 @@ else
     B=$BIT
 fi
 
-if [ "$P" != "linux" ] && [ "$P" != "windows" ]
+if [ "$P" != "linux" ] && [ "$P" != "windows" ] && [ "$P" != "web" ]
 then
     echo "PLATFORM parameter or env var is not properly set! Value is: \"${P}\"!"
     echo "Please check help page via \"./fetch_dependencies -h\""
@@ -56,7 +56,12 @@ elif [ "$P" == "windows" ]
 then
     sudo apt-get install mingw-w64
     exit
+elif [ "$P" == "web" ]
+then
+    cd "$(dirname "${BASH_SOURCE[0]}")"
+    ./fetch_emscripten.sh
+    ./fetch_emscripten_deps.sh
 else
-    echo "Please define env var \"PLATFORM\" eiter with \"linux\" or \"windows\""
+    echo "Please define env var \"PLATFORM\" eiter with \"linux\", \"windows\" or \"web\""
     exit
 fi

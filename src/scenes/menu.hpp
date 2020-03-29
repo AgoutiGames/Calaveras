@@ -14,6 +14,7 @@ class Menu : public GameScene {
 
         void init() override;
         void update() override;
+        std::string get_type() const override {return type;}
 
         void button_pressed(std::string id);
 

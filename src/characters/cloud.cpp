@@ -14,6 +14,6 @@ void Cloud::init() {
 
 void Cloud::update() {
     // Add character logic here
-    move(m_speed,0);
-    if(get_x() > m_scene->get_w()) {move(1.0f - get_w(),get_y(),true);}
+    move_relative(m_speed,0);
+    if(get_x() > m_scene->get_w()) {move_absolute(1.0f - get_w(),get_y());}
 }
