@@ -16,11 +16,11 @@ env:
 - CONFIG=Debug PLATFORM=web BIT=64
 install:
 - sudo apt-get update
-- sudo ./scripts/fetch_dev_dependencies.sh
+- ./scripts/fetch_dev_dependencies.sh
 script:
-- "./scripts/compile.sh"
+- ./scripts/compile.sh
 before_deploy:
-- "./scripts/pack_artifacts.sh"
+- ./scripts/pack_artifacts.sh
 deploy:
   provider: releases
   skip_cleanup: true
