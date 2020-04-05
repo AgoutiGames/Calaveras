@@ -1,0 +1,41 @@
+For a fully automated build process execute the build.sh bash script located in
+the scripts folder. For information about proper usage execute "./build.sh -h".
+
+We currently supply a native linux build and a windows cross-compilation build
+via mingw-64 under linux. There is also 64 bit and a 32 bit compile option.
+
+Additionally there is a web build via emscripten. Bitness parameters still must
+be supplied though they are then completely ignored.
+
+Note: When compiling the linux32 version it will break your 64 bit sdl2 dev libs
+      so make sure to reinstall sdl2 afterwards to avoid hiccups later on.
+      
+Warning: Dont forget to git clone with --recurse-submodules, otherwise the build
+         will fail since the RawSalmonEngine is missing!
+
+Scripts located in ./scripts folder:
+
+fetch_dev_dependencies.sh : Installls needed dependencies for compilation of the
+                            project via aptitude
+
+fetch_dependencies.sh     : Installs dependencies for end users who whish to run
+                            the engine or applications built with the library
+                            
+fetch_emscripten.sh       : Downloads and installs the latest emscripten sdk
+                            into the emsdk directory at root level
+                            
+fetch_emscripten_deps.sh  : Builds emscripten versions of dependencies needed
+                            for which now official emscripten port exists.
+                            libb64 and tinyxml2 are built into emscripten_deps
+                            directory at root
+
+compile.sh                : Compiles the project inside a build folder at
+                            project root level
+
+pack_artifacts.sh         : Packs the compiled artifacts and supplementary files
+                            into an archive at project root level
+
+clean_up.sh               : Deletes the build folder
+
+build.sh                  : Executes all build scripts in order to emit an
+                            archive with all files needed for a release

@@ -68,8 +68,9 @@ then
 elif [ "$P" == "web" ]
 then
     cd build
-    tar cfvz ./${PROJECT_NAME}-${TRAVIS_TAG}-${P}.tar.gz *.html *.js *.wasm *.data
-    mv *.tar.gz ../
+    mv *.html index.html
+    zip -r ./${PROJECT_NAME}-${TRAVIS_TAG}-${P}.zip *.html *.js *.wasm *.data
+    mv *.zip ../
 else
     echo "Please define env var \"PLATFORM\" eiter with \"linux\", \"windows\" or \"web\""
     exit 1

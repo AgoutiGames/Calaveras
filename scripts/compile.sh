@@ -52,7 +52,7 @@ fi
 
 cd "$(dirname "${BASH_SOURCE[0]}")"
 cd ../
-mkdir build
+mkdir -p build
 cd build
 if [ "$P" == "web" ]
 then
