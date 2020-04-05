@@ -3,10 +3,13 @@ A little game about a jumping frog. Click, drag and release to let the frog jump
 ## Compile and install
 * Generally you can just use the bash scripts in the [scripts folder](/scripts)
 * See [COMPILATION](/COMPILATION) for details
-<details>
-  <summary>## Demo</summary>
+## Demo
+<details><summary>Click to expand</summary>
+  
   ![Calaveras Gif](readme/Calaveras.gif)
+ 
 </details>
+
 ## Contact
 * [Agouti Games](https://agouti.games)
 * [Discord Server](https://discord.gg/thAaD9e)
